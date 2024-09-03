@@ -55,3 +55,39 @@ letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 print(letters[:3])
 
 
+##################################### Exercise #8
+# Complete the script so that it prints out the letter 'i' using negative indexing.
+# letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+# Expected output:
+# i
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+print(letters[-2])
+
+
+##################################### Exercise #9
+# Complete the script so that it prints out a list slice containing the last three items of the list letters .
+# letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+# Expected output:
+# ['h', 'i', 'j']
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+print(letters[-3:])
+
+##################################### Exercise #10
+# Complete the script so that it prints out a list slice containing letters a, c, e, g, and i. 
+# letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+# Expected output: 
+# ['a', 'c', 'e', 'g', 'i']
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+res = []
+for i in range(len(letters)):
+    if i%2 == 0:
+        res.append(letters[i])
+print(res)
+# Through List Slicing
+# The complete syntax of list slicing is [start:end:step].
+# When you don't pass a step, Python assumes the step is 1.
+# [:]  itself means to get everything from start to end.
+# So, [::2]  means get everything from start to end at a step of two.
+print(letters[::2])
+
+
