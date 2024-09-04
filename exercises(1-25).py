@@ -138,3 +138,47 @@ dictionary = {"a": 1, "b": 2}
 dictionary2 = dict(a = 100, b = 200)
 print(dictionary["a"], dictionary["b"])
 print(dictionary2["a"], dictionary["b"])
+
+
+################################# Exercise#16 (Access Dictionary Item)
+# Please complete the script so that it prints out the value of key b .
+d = {"a": 1, "b": 2}
+print(d["b"])
+# or
+print(d.get("b"))
+
+################################# Exercise#17 (Access Dictionary Item)
+# Calculate the sum of the values of keys a  and b .
+# d = {"a": 1, "b": 2, "c": 3}
+# Expected output: 
+# 3
+d = {"a": 1, "b": 2, "c": 3}
+print(d["a"] + d["b"])
+
+
+################################# Exercise#17 (KeyError)
+# d = {"Name": "John", "Surname": "Smith"}
+# print(d["Smith"])
+# Answer: 
+# There is no key Smith  in the dictionary. Smith  is a value. You want to use Surname  if you want to access Smith :
+
+
+################################# Exercise#17 (Add Key in Dict)
+# Add a new pair of key (e.g. c ) and value (e.g. 3 ) to the dictionary and print out the new dictionary.
+
+# d = {"a": 1, "b": 2}
+# Expected output:  {'a': 1, 'c': 3, 'b': 2} 
+d = {"a": 1, "b": 2}
+d["c"] = 3
+print(d)
+
+
+################################# Exercise#18 (Sum of dict values)
+# Calculate the sum of all dictionary values.
+
+# d = {"a": 1, "b": 2, "c": 3}
+# Expected output: 6 
+
+d = {"a": 1, "b": 2, "c": 3}
+# d.values()  returns a list-like dict_values  object while the sum  function calculates the sum of the dict_values  items.
+print(sum(d.values()))
