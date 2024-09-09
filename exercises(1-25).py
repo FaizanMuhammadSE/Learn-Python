@@ -1,3 +1,4 @@
+from pprint import pprint
 ######################################### Exercise#1 (Variable Updating)
 # What will the following code produce?
 a = 2
@@ -156,14 +157,14 @@ d = {"a": 1, "b": 2, "c": 3}
 print(d["a"] + d["b"])
 
 
-################################# Exercise#17 (KeyError)
+################################# Exercise#18 (KeyError)
 # d = {"Name": "John", "Surname": "Smith"}
 # print(d["Smith"])
 # Answer: 
 # There is no key Smith  in the dictionary. Smith  is a value. You want to use Surname  if you want to access Smith :
 
 
-################################# Exercise#17 (Add Key in Dict)
+################################# Exercise#19 (Add Key in Dict)
 # Add a new pair of key (e.g. c ) and value (e.g. 3 ) to the dictionary and print out the new dictionary.
 
 # d = {"a": 1, "b": 2}
@@ -173,7 +174,7 @@ d["c"] = 3
 print(d)
 
 
-################################# Exercise#18 (Sum of dict values)
+################################# Exercise#20 (Sum of dict values)
 # Calculate the sum of all dictionary values.
 
 # d = {"a": 1, "b": 2, "c": 3}
@@ -182,3 +183,42 @@ print(d)
 d = {"a": 1, "b": 2, "c": 3}
 # d.values()  returns a list-like dict_values  object while the sum  function calculates the sum of the dict_values  items.
 print(sum(d.values()))
+
+################################ Exercise#21 (Dictionary Filtering)
+# Question: Filter the dictionary by removing all items with a value of greater than 1.
+# d = {"a": 1, "b": 2, "c": 3}
+# Expected output: {'a': 1}  
+d = {"a": 1, "b": 2, "c": 3}
+res = {}
+for x,y in d.items():
+    if y <= 1:
+        res[x]=y
+print(res)
+
+# or
+# by using dictionary comprehension
+d = {"a": 1, "b": 2, "c": 3}
+d = {x:y for x,y in d.items() if y <= 1}
+# or
+# by using dictionary constructor
+d = dict((key, value) for key, value in d.items() if value <= 1)
+print(d)
+
+################################ Exercise#22 (Formatted Print a dictory having lists)
+# Create a dictionary and print it out.
+d = {"a": [x for x in range(1,11)], "b": [x for x in range(11,21)], "c": [x for x in range(21,31)]}
+# or
+# d = {"a": list(range(1,11)), "b": list(range(11,21)), "c": list(range(21,31))}
+# using f-string
+formatted_output = f'{{"a": {d["a"]},\n "b": {d["b"]},\n "c": {d["c"]}}}'
+print(formatted_output)
+# or
+# pprint is used to print dictionary in formatted way
+pprint(d)
+
+################################ Exercise#23 (Multi Level Indexing)
+# Question: Access the third value of key b  from the dictionary.
+# d = dict(a = list(range(1, 11)), b = list(range(11, 21)), c = list(range(21, 31)))
+# Expected output: 13  
+d = dict(a = list(range(1, 11)), b = list(range(11, 21)), c = list(range(21, 31)))
+print(d["b"][2])
