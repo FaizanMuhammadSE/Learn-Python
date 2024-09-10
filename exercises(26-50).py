@@ -34,3 +34,30 @@ def findAccelration(v1,v2,t1,t2):
 
 print(findAccelration(0,10,0,20))
 
+
+################################## Exercise#28 (Type Error)
+# Question:  Why is there an error in the code, and how would you fix it?
+# def foo(a, b):
+#     print(a + b) 
+# x = foo(2, 3) * 10
+# Reason: function isnt returning, so return something
+
+
+################################## Exercise#29 (Volume)
+# Please write a function that calculates liquid volume in a sphere using the following formula. The radius r  is always 10, so consider making it a default parameter.
+from math import pi as PI
+def volume(h,r=10):
+    return (4*PI*pow(r,3))/3 - (PI*pow(h,2)*(3*r-h))/3
+    # or
+    # return (4 * PI * r**3) / 3 - (PI * h**2 * (3 * r - h)) / 3
+print(volume(2))    
+
+
+################################## Exercise#30 (Arguments)
+# Question:  Why do you get an error, and how would you fix it?
+# def foo(a=2, b):
+#     return a + b
+
+# Reason: Always put non-default parameters first, followed by default ones.
+
+
