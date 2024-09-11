@@ -61,3 +61,59 @@ print(volume(2))
 # Reason: Always put non-default parameters first, followed by default ones.
 
 
+################################ Exercise#31(Function Blueprint)
+# Question:  Why is there an error in the code, and how would you fix it?
+
+# def foo(a=1, b=2):
+#     return a + b
+ 
+# x = foo - 1
+# Reason: foo is a function, and you need to call it with parentheses.
+
+################################ Exercise#32(Global Variable)
+# Question:  What will the following script output? Please try to do this by mind if you can.
+
+# c = 1
+# def foo():
+#     return c
+# c = 3
+# print(foo())
+# Reason: At the time when the function is called c  has a value of 3
+
+
+################################ Exercise#33(local Variable)
+# Question:  Here's another similar exercise. What will the following script output? Try to do this mentally if you can.
+
+# c = 1
+# def foo():
+#     c = 2
+#     return c
+# c = 3
+# print(foo())
+# Output: 2
+# ReNote that c  is a local variable that exists only inside the function. The other two c  variables are global variables and have nothing to do with the function
+# If you want to refer to global variable inside function while updating then use global keyword infront of variable inside function
+
+################################ Exercise#34(Local Vs Global Variable)
+# Question: The following script throws a NameError  in the last line saying that c  is not defined. Please fix the function so that there is no error and the  last line can print out the value of c  (i.e. 1 ).
+
+# def foo(): 
+#     c = 1 
+#     return c 
+# foo() 
+# print(c)
+# Expected output: 1
+def foo():
+    global c # By using global keyword with variable inside function we can make it Global instead of local to func
+    c = 1 
+    return c 
+foo() 
+print(c)
+
+################################# Exercise#35 (string splitter)
+# Create a function that takes any string as input and returns the number of words for that string.
+def findWords(sentence):
+    return len(sentence.split(" "))
+
+inputLine = input()
+print(findWords(inputLine))
