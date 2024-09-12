@@ -1,3 +1,4 @@
+import os
 ################################ Exercise#26
 # Question: Make a script that prints out numbers from 1 to 10
 
@@ -117,3 +118,38 @@ def findWords(sentence):
 
 inputLine = input()
 print(findWords(inputLine))
+
+################################ Exercise#36 (Word Counter)
+def wordCounter(fileName):
+    # Get the current directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # Join the current directory with the filename
+    file_path = os.path.join(current_dir, f'./supporting-files/{fileName}')
+    file = open(file_path, 'rt')
+    content = file.read()
+    print(len(content.split(" ")))
+
+wordCounter('words1.txt')
+
+
+################################ Exercise#37 (Advanced Word Counter)
+#NOte: There can be some commas separated words instead of space
+
+def advancedWordCounter(fileName):
+    # Get the current directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # Join the current directory with the filename
+    file_path = os.path.join(current_dir, f'./supporting-files/{fileName}')
+    file = open(file_path, 'rt')
+    content = file.read()
+    fixedContent = content.replace(',', ' ')
+    print(len(fixedContent.split(" ")))
+
+advancedWordCounter('words2.txt')
+
+
+################################ Exercise#38 (Name Error)
+# math.sqrt(9)
+# Reason: math module isn't imported
+
+
