@@ -152,4 +152,44 @@ advancedWordCounter('words2.txt')
 # math.sqrt(9)
 # Reason: math module isn't imported
 
+################################ Exercise#39 (Attribute Error)
+import math
+# print(math.cosine(1)) # Reason: There is no cosine function in math module
+print(math.cos(1))
 
+################################ Exercise#40 (Type Error)
+# Please try to guess what is missing in the following code and add the missing part so that the code works fine.
+import math
+# print(math.pow(2)) # Reason: pow func take 2 arguments
+print(math.pow(2,3))
+
+################################ Exercise#41 (Letters in File)
+# Create a script that generates a text file with all letters of the English alphabet inside it, one letter per line.
+
+def generateAlphabets(fileName):
+    # Get the current directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # Join the current directory with the filename
+    file_path = os.path.join(current_dir, f'./supporting-files/{fileName}')
+    file = open(file_path, 'wt')
+    for i in range(97,123):
+        file.write(chr(i) + "\n")
+    file.close()
+
+generateAlphabets('alphabets.txt')
+
+################################ Exercise#42 (Iterating Multiple Sequence)
+# Print out in each line the sum of homologous items of the two sequences.
+
+a = [1, 2, 3]
+b = (4, 5, 6)
+
+for i in range(max(len(a),len(b))):
+    print(a[i] + b[i])
+
+# or
+# Using the zip function to iterate over both sequences simultaneously
+# The zip function takes iterables (can be zero or more), aggregates them in a tuple, and returns it. 
+# This is useful for iterating over multiple sequences in parallel.
+for x, y in zip(a, b):
+    print(x + y)
